@@ -1,0 +1,7 @@
+﻿services:
+  asplesson:
+    image: asplesson
+    build:
+      context: .
+      dockerfile: AspLesson/Dockerfile
+
