@@ -95,3 +95,9 @@
 /Users/pika/Galaxy/DotNet/AspLesson/AspLesson/obj/Debug/net10.0/AspLesson.pdb
 /Users/pika/Galaxy/DotNet/AspLesson/AspLesson/obj/Debug/net10.0/AspLesson.genruntimeconfig.cache
 /Users/pika/Galaxy/DotNet/AspLesson/AspLesson/obj/Debug/net10.0/ref/AspLesson.dll
+/Users/pika/Galaxy/DotNet/AspLesson/AspLesson/obj/Debug/net10.0/AspLesson.sourcelink.json
+/Users/pika/Galaxy/DotNet/AspLesson/AspLesson/obj/Debug/net10.0/AspLesson.csproj.AssemblyReference.cache
+/Users/pika/Galaxy/DotNet/AspLesson/AspLesson/obj/Debug/net10.0/AspLesson.MvcApplicationPartsAssemblyInfo.cs
+/Users/pika/Galaxy/DotNet/AspLesson/AspLesson/bin/Debug/net10.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/pika/Galaxy/DotNet/AspLesson/AspLesson/bin/Debug/net10.0/Microsoft.OpenApi.dll
+/Users/pika/Galaxy/DotNet/AspLesson/AspLesson/obj/Debug/net10.0/AspLesson.csproj.Up2Date
