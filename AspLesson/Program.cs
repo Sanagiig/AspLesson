@@ -1,13 +1,44 @@
 using AspLesson.exceptions;
 using AspLesson.Filters;
-using Microsoft.AspNetCore.Diagnostics;
+using AspLesson.Validators;
+using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
 // Add services to the container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddProblemDetails();
+builder.Services.AddControllers(options =>
+{
+    // 全局注册验证过滤器，自动对所有 Action 的请求参数进行 FluentValidation 验证
+    options.Filters.Add<ValidationActionFilter>();
+});
+
+// 关闭 ApiController 的自动 ModelState 校验（由 ValidationActionFilter 接管）
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
+
+// 注册 FluentValidation 验证器
+builder.Services.AddValidatorsFromAssemblyContaining<UserRegistrationRequestValidator>();
+
+// 配置 ProblemDetails（用于异常处理）
+builder.Services.AddProblemDetails(options =>
+{
+    options.CustomizeProblemDetails = ctx =>
+    {
+        ctx.ProblemDetails.Extensions["traceId"] = ctx.HttpContext.TraceIdentifier;
+        ctx.ProblemDetails.Extensions["timestamp"] = DateTime.UtcNow;
+        ctx.ProblemDetails.Instance = $"{ctx.HttpContext.Request.Method} {ctx.HttpContext.Request.Path}";
+    };
+});
+
+// 注册全局异常处理器
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
+// 配置 OpenAPI
 builder.Services.AddOpenApi(options =>
 {
     options.AddDocumentTransformer((document, context, cancellationToken) =>
@@ -31,34 +62,29 @@ builder.Services.AddOpenApi(options =>
     });
 });
 
-
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
-    
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     // app.UseHsts();
 }
 
-
+app.UseExceptionHandler();
 app.MapOpenApi();
+app.MapScalarApiReference();
 app.UseHttpsRedirection();
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapStaticAssets();
+app.MapControllers();
 
-app.MapGet("/", () => "Hello World!");//.AddEndpointFilter<LoggingFilter>();
+app.MapGet("/", () => "Hello World!").AddEndpointFilter<LoggingFilter>();
 
 app.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
-
 
 app.Run();

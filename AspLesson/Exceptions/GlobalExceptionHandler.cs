@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,9 +10,14 @@ public sealed class GlobalExceptionHandler(
 {
     public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
     {
-        logger.LogError(exception, "Unhandled exception occurred. TraceId: {TraceId}",
-            httpContext.TraceIdentifier);
+        var traceId = httpContext.TraceIdentifier;
+        var activityId = Activity.Current?.Id;
+        var activityTraceId = Activity.Current?.TraceId.ToString();
 
+        logger.LogInformation("TraceIdentifier={TraceIdentifier}, ActivityId={ActivityId}, ActivityTraceId={ActivityTraceId}",
+            traceId, activityId, activityTraceId);
+        logger.LogError(exception, "Unhandled exception occurred. TraceId: {TraceId}",
+            traceId);
         var (statusCode, title) = MapException(exception);
 
         httpContext.Response.StatusCode = statusCode;
@@ -25,7 +31,7 @@ public sealed class GlobalExceptionHandler(
             Detail = GetSafeErrorMessage(exception, httpContext)
         };
 
-        problemDetails.Extensions["traceId"] = httpContext.TraceIdentifier;
+        problemDetails.Extensions["traceId2"] = traceId;
         problemDetails.Extensions["timestamp"] = DateTime.UtcNow;
 
         return await problemDetailsService.TryWriteAsync(new ProblemDetailsContext
