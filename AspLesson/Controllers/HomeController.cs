@@ -4,6 +4,8 @@ using AspLesson.Models;
 
 namespace AspLesson.Controllers;
 
+[ApiController]
+[Route("api/[controller]/[action]")]
 public class HomeController : Controller
 {
     public IActionResult Index()
