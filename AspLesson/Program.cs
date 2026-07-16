@@ -12,6 +12,8 @@ using Serilog.Context;
 Log.Logger = new LoggerConfiguration().WriteTo.Console().WriteTo
     .File("logs/log.txt", rollingInterval: RollingInterval.Day).CreateLogger();
 
+// 输出到 Serilog 
+Serilog.Debugging.SelfLog.Enable(msg => Log.Error(msg));
 try
 {
     var builder = WebApplication.CreateBuilder(args);
@@ -85,13 +87,14 @@ try
     }
 
     app.UseExceptionHandler();
-    app.MapOpenApi();
-    app.MapScalarApiReference();
     app.UseHttpsRedirection();
     app.UseRouting();
     app.UseMiddleware<CorrelationIdMiddleware>();
     app.UseSerilogRequestLogging();
     app.UseAuthorization();
+    
+    app.MapOpenApi();
+    app.MapScalarApiReference();
     app.MapStaticAssets();
     app.MapControllers();
 

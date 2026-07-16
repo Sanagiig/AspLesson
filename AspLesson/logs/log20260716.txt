@@ -1,0 +1,37 @@
+2026-07-16 15:46:31.455 +08:00 [INF] Starting web host
+2026-07-16 15:46:31.789 +08:00 [INF] Now listening on: http://localhost:5164 {"EventId":{"Id":14,"Name":"ListeningOnAddress"},"SourceContext":"Microsoft.Hosting.Lifetime"}
+2026-07-16 15:46:31.795 +08:00 [INF] Application started. Press Ctrl+C to shut down. {"SourceContext":"Microsoft.Hosting.Lifetime"}
+2026-07-16 15:46:31.795 +08:00 [INF] Hosting environment: Development {"SourceContext":"Microsoft.Hosting.Lifetime"}
+2026-07-16 15:46:31.795 +08:00 [INF] Content root path: /Users/pika/Galaxy/DotNet/AspLesson/AspLesson {"SourceContext":"Microsoft.Hosting.Lifetime"}
+2026-07-16 15:46:44.834 +08:00 [INF] Application is shutting down... {"SourceContext":"Microsoft.Hosting.Lifetime"}
+2026-07-16 15:46:46.325 +08:00 [INF] Starting web host
+2026-07-16 15:46:46.657 +08:00 [INF] Now listening on: http://localhost:5164 {"EventId":{"Id":14,"Name":"ListeningOnAddress"},"SourceContext":"Microsoft.Hosting.Lifetime","MachineName":"PikadeMacBook-Air","ProcessId":69952,"ThreadId":1}
+2026-07-16 15:46:46.663 +08:00 [INF] Application started. Press Ctrl+C to shut down. {"SourceContext":"Microsoft.Hosting.Lifetime","MachineName":"PikadeMacBook-Air","ProcessId":69952,"ThreadId":1}
+2026-07-16 15:46:46.663 +08:00 [INF] Hosting environment: Development {"SourceContext":"Microsoft.Hosting.Lifetime","MachineName":"PikadeMacBook-Air","ProcessId":69952,"ThreadId":1}
+2026-07-16 15:46:46.663 +08:00 [INF] Content root path: /Users/pika/Galaxy/DotNet/AspLesson/AspLesson {"SourceContext":"Microsoft.Hosting.Lifetime","MachineName":"PikadeMacBook-Air","ProcessId":69952,"ThreadId":1}
+2026-07-16 15:47:57.959 +08:00 [INF] Application is shutting down... {"SourceContext":"Microsoft.Hosting.Lifetime","MachineName":"PikadeMacBook-Air","ProcessId":69952,"ThreadId":19}
+2026-07-16 15:48:00.492 +08:00 [INF] Starting web host
+2026-07-16 15:48:00.805 +08:00 [INF] Now listening on: http://localhost:5164 {"EventId":{"Id":14,"Name":"ListeningOnAddress"},"SourceContext":"Microsoft.Hosting.Lifetime","MachineName":"PikadeMacBook-Air","ProcessId":70808,"ThreadId":1}
+2026-07-16 15:48:00.811 +08:00 [INF] Application started. Press Ctrl+C to shut down. {"SourceContext":"Microsoft.Hosting.Lifetime","MachineName":"PikadeMacBook-Air","ProcessId":70808,"ThreadId":1}
+2026-07-16 15:48:00.811 +08:00 [INF] Hosting environment: Development {"SourceContext":"Microsoft.Hosting.Lifetime","MachineName":"PikadeMacBook-Air","ProcessId":70808,"ThreadId":1}
+2026-07-16 15:48:00.811 +08:00 [INF] Content root path: /Users/pika/Galaxy/DotNet/AspLesson/AspLesson {"SourceContext":"Microsoft.Hosting.Lifetime","MachineName":"PikadeMacBook-Air","ProcessId":70808,"ThreadId":1}
+2026-07-16 15:48:13.678 +08:00 [INF] Application is shutting down... {"SourceContext":"Microsoft.Hosting.Lifetime","MachineName":"PikadeMacBook-Air","ProcessId":70808,"ThreadId":15}
+2026-07-16 15:48:15.069 +08:00 [INF] Starting web host
+2026-07-16 15:48:15.309 +08:00 [ERR] 2026-07-16T07:48:15.3092410Z Unable to find a method called FromLogContext1. Candidate methods are:
+Serilog.LoggerConfiguration WithEnvironmentName(Serilog.Configuration.LoggerEnrichmentConfiguration)
+Serilog.LoggerConfiguration WithMachineName(Serilog.Configuration.LoggerEnrichmentConfiguration)
+Serilog.LoggerConfiguration WithEnvironmentUserName(Serilog.Configuration.LoggerEnrichmentConfiguration)
+Serilog.LoggerConfiguration WithEnvironmentVariable(Serilog.Configuration.LoggerEnrichmentConfiguration, System.String, System.String)
+Serilog.LoggerConfiguration WithProcessId(Serilog.Configuration.LoggerEnrichmentConfiguration)
+Serilog.LoggerConfiguration WithProcessName(Serilog.Configuration.LoggerEnrichmentConfiguration)
+Serilog.LoggerConfiguration WithThreadId(Serilog.Configuration.LoggerEnrichmentConfiguration)
+Serilog.LoggerConfiguration WithThreadName(Serilog.Configuration.LoggerEnrichmentConfiguration)
+Serilog.LoggerConfiguration WithExceptionDetails(Serilog.Configuration.LoggerEnrichmentConfiguration)
+Serilog.LoggerConfiguration WithExceptionDetails(Serilog.Configuration.LoggerEnrichmentConfiguration, Serilog.Exceptions.Core.IDestructuringOptions)
+Serilog.LoggerConfiguration With(Serilog.Configuration.LoggerEnrichmentConfiguration, Serilog.Core.ILogEventEnricher)
+Serilog.LoggerConfiguration AtLevel(Serilog.Configuration.LoggerEnrichmentConfiguration, System.Action`1[Serilog.Configuration.LoggerEnrichmentConfiguration], Serilog.Events.LogEventLevel, Serilog.Core.LoggingLevelSwitch)
+Serilog.LoggerConfiguration FromLogContext(Serilog.Configuration.LoggerEnrichmentConfiguration)
+2026-07-16 15:48:15.397 +08:00 [INF] Now listening on: http://localhost:5164 {"EventId":{"Id":14,"Name":"ListeningOnAddress"},"SourceContext":"Microsoft.Hosting.Lifetime","MachineName":"PikadeMacBook-Air","ProcessId":71005,"ThreadId":1}
+2026-07-16 15:48:15.402 +08:00 [INF] Application started. Press Ctrl+C to shut down. {"SourceContext":"Microsoft.Hosting.Lifetime","MachineName":"PikadeMacBook-Air","ProcessId":71005,"ThreadId":1}
+2026-07-16 15:48:15.402 +08:00 [INF] Hosting environment: Development {"SourceContext":"Microsoft.Hosting.Lifetime","MachineName":"PikadeMacBook-Air","ProcessId":71005,"ThreadId":1}
+2026-07-16 15:48:15.402 +08:00 [INF] Content root path: /Users/pika/Galaxy/DotNet/AspLesson/AspLesson {"SourceContext":"Microsoft.Hosting.Lifetime","MachineName":"PikadeMacBook-Air","ProcessId":71005,"ThreadId":1}
