@@ -1,3 +1,4 @@
+using Serilog;
 using Serilog.Context;
 
 namespace AspLesson.middlewares;
@@ -12,7 +13,7 @@ public class CorrelationIdMiddleware(RequestDelegate next)
                             ?? Guid.NewGuid().ToString();
 
         context.Response.Headers[CorrelationIdHeader] = correlationId;
-
+        Log.Information("CorrelationIdMiddleware");
         using (LogContext.PushProperty("CorrelationId", correlationId))
         {
             await next(context);

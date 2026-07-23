@@ -17,12 +17,12 @@ public class ValidationActionFilter : IAsyncActionFilter
         // 从 Action 参数中找到复杂类型（非基元类型）的请求对象
         var requestArg = context.ActionArguments.Values
             .FirstOrDefault(v => v is not null && v.GetType() is { IsPrimitive: false, IsEnum: false } type
-                                 && type != typeof(string));
+                                               && type != typeof(string));
 
         if (requestArg is not null)
         {
             var validatorType = typeof(IValidator<>).MakeGenericType(requestArg.GetType());
-            
+
             if (context.HttpContext.RequestServices.GetService(validatorType) is IValidator validator)
             {
                 var validationContext = new ValidationContext<object>(requestArg);

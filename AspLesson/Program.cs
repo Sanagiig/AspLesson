@@ -29,6 +29,7 @@ try
 // Add services to the container.
     builder.Services.AddControllers(options =>
     {
+        options.Filters.Add<CacheResourceFilter>();
         // 全局注册验证过滤器，自动对所有 Action 的请求参数进行 FluentValidation 验证
         options.Filters.Add<ValidationActionFilter>();
     });
